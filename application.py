@@ -5,9 +5,10 @@ import csv, os
 #   http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/create-deploy-python-flask.html
 #   http://exploreflask.com/en/latest/
 
-# reads a raw trip CSVs
+# reads raw trip CSVs from a directory
 # combines alternating rows into a single record
-# writes new records to a single large file (not ideal), this should be paginated or broken up with tiling
+# writes new records to a single large file (not ideal),
+# it belongs in a db, or needs to be paginated or broken up with some clever tiling
 def transform_trip_data():
 	with open('static/data/trips.csv', 'w') as fout:
 		writer = csv.writer(fout)
@@ -40,6 +41,6 @@ def index():
 
 # run the server
 if __name__ == "__main__":
-	transform_trip_data()
+	transform_trip_data() # transform data once
 	application.config.from_object('config')
 	application.run()
