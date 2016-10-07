@@ -1,1 +1,1 @@
-DEBUG = True # remove on production
+# DEBUG = True
