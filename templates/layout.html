@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0">
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}">
+		<title>{% block title %}{% endblock %}</title>
+		{% block head %}
+		{% endblock %}
+	</head>
+	<body>
+		{% block body %}
+		{% endblock %}
+	</body>
+</html>
