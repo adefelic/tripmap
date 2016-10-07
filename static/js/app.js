@@ -64,14 +64,15 @@ function update_map(trips) {
 	}
 }
 
+// transform trip csv into json
 function on_load_success(data) {
 	$('#app-status').text('Parsing trips...');
 	var trips = d3.csvParse(data, function(d) {
 		return {
-			date: d.Date, //new Date(+d.Year, 0, 1), // lowercase and convert "Year" to Date
-			time: d.Time, // lowercase
-			from_lat: +d.FromLat, // lowercase
-			from_lon: +d.FromLon, // lowercase and convert "Length" to number
+			date: d.Date,
+			time: d.Time,
+			from_lat: +d.FromLat,
+			from_lon: +d.FromLon,
 			to_lat: +d.ToLat,
 			to_lon: +d.ToLon
 		};
